@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="rows">
+    <div class="col-3 head">
+        <h1>Welcome to XYZ fashion store.. </h1>
+        <p>Thank you for choosing <b>XYZ fashion store.</b> Please take your time to shop all your favourite trending
+            fashion seamlessly delivered by us to you in a click of the button. We pride ourselves in delivering top of
+            the range quality clothing at affordable prices, also be on the lookout for our <b>30% marked discounts.</b>
+            <br><br>
+            <b> click on the below button to begin shopping with us: </b>
+        </p>
+        <button routerLink="/login" class="btn btn-primary">Shop now</button>
+    </div>
+    <div class="image col-2">
+        <img class="gif" src="https://i.pinimg.com/originals/b7/d6/8c/b7d68cdf1b8af238860fba71514eda5a.gif" alt="">
+    </div>
+</div>
+
+
+<div class="items">
+    <div class="row">
+        <div class="col-md-3 " *ngFor="let pro of productList">
+            <img class="img" (click)="image()" src="{{pro.product_image}}" alt="">
+            <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
+                {{pro.product_desc}}</h5>
+            <h6>{{pro.product_price}}</h6>
+        </div>
+    </div>
+</div>
+
+
+<!-- featured items -->
+<div class="feature">
+    <div class="items">
+        <div class="row">
+            <h3 class="title">Features</h3>
+            <div class="col-md-3" *ngFor="let feat of featureList">
+                <img class="img" (click)="addToCart(feat)" src="{{feat.product_image}}" alt="">
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
+                    {{feat.product_desc}}</h5>
+                <h6>R{{feat.product_price}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Sale -->
+
+<div class="sale">
+    <div class="row">
+        <h3 class="title">Sale</h3>
+        <div class="col-md-3" *ngFor="let sale of saleList">
+            <img src="{{sale.product_image}}" (click)="addToCartSale(sale)" alt="" class="img">
+            <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">
+                {{sale.product_desc}}</h5>
+            <h6>was R{{sale.product_normal_price}}</h6>
+            <h6>now R{{sale.product_sale_price}} <sup style="background-color: red; color: #fff;">30%</sup></h6>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+
+<div class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="footer col-md-3 first another">
+                <p>Follow us on the following Social Media Links:</p>
+
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-google"></a>
+
+                <p>&copy; Developed by <small>Lwandile Ngesi</small></p>
+
+            </div>
+        </div>
